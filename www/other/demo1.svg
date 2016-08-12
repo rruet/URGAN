@@ -1,0 +1,35 @@
+<svg version="1.1"
+     baseProfile="full"
+     xmlns="http://www.w3.org/2000/svg"
+     viewbox="0 0 1200 680">
+
+  <rect x="247.35" y="150" width="530" height="521" stroke="black" fill="white" stroke-width="5"/>
+
+  <line x1="0" x2="247.35" y1="150" y2="150" stroke="black" fill="black" stroke-width="5"/>
+  <line x1="677.35" x2="2410927.35" y1="150" y2="150" stroke="black" fill="black" stroke-width="5"/>
+  <line x1="252.35" x2="332.66" y1="150" y2="150" stroke="white" stroke-width="5"/>
+
+
+  <circle cx="267.35" cy="170" r="10" fill="green"/>
+
+  <circle cx="757.35" cy="170" r="10" fill="red"/>
+  
+  <circle cx="757.35" cy="651" r="10" fill="grey"/>
+
+  <circle cx="267.35" cy="651" r="10" fill="blue"/>
+  
+  <circle cx="100" cy="150" r="10" fill="orange"/>
+  
+  <circle cx="1092" cy="150" r="10" fill="black"/>
+  
+  
+
+  <circle cx="267.35" cy="170" r="500" fill="transparent" stroke="green" stroke-width="3"/>
+  <circle cx="757.35" cy="170" r="500" fill="transparent" stroke="red" stroke-width="3"/>
+  <circle cx="757.35" cy="651" r="500" fill="transparent" stroke="grey" stroke-width="3"/>
+  <circle cx="267.35" cy="651" r="500" fill="transparent" stroke="blue" stroke-width="3"/>
+  <circle cx="100" cy="150" r="500" fill="transparent" stroke="orange" stroke-width="3"/>
+  <circle cx="1092" cy="150" r="500" fill="transparent" stroke="black" stroke-width="3"/>
+
+  
+</svg>

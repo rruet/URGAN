@@ -1,0 +1,27 @@
+#container2,#container3,#container4,#container5{
+	margin-top : 0;
+}
+
+#container2{
+	position : absolute;
+	left : Opx;
+	width : 25%;
+}
+
+#container3{
+	position : absolute;
+	left : 25%;
+	width : 25%;
+}
+
+#container4{
+	position: absolute;
+	left: 50%;
+	width : 25%;
+}
+
+#container5{
+	position : absolute;
+	left : 75%;
+	width : 25%
+}
