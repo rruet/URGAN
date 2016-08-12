@@ -6,7 +6,7 @@
 /*averaged values to all the superMArkers*/
 /*****************************************/
 
-#define MAX_DEVICES 10 //50 superMArkers and 50 simpleMarkers
+#define MAX_DEVICES 10 //including simple and super markers
 #define MAX_COUNT 10 //sampling rate
 #include <RFduinoGZLL.h>
 #include <stdlib.h>
@@ -14,6 +14,7 @@
 // RSSI total and count for each device for averaging
 int rssi_total[MAX_DEVICES];
 int rssi_count[MAX_DEVICES];
+
 int rssis[MAX_DEVICES][MAX_COUNT];
 int average[MAX_DEVICES];
 char data_badge[9];
@@ -28,7 +29,7 @@ void setup()
 {
   // write the Device and RSSI values to the Serial Monitor
   Serial.begin(115200);
-  // start the GZLL stack
+  // start the GZLL stack in HOST mode
   RFduinoGZLL.begin(HOST);  
   RFduinoGZLL.txPowerLevel=0;
 
@@ -37,7 +38,7 @@ void setup()
    rssi_count[i] = 0;
    first[i]=1;
    if(i<MAX_DEVICES)
-    active_markers[i]=MAX_DEVICES+1; // impossible, 100 devices max
+    active_markers[i]=MAX_DEVICES+1; // impossible, permit to know if a device is active or not
   }
 }
 
@@ -51,7 +52,7 @@ void loop()
   // start collecting RSSI samples
   get_rssi = 1;
 
-  // wait one second
+  // during one second
   delay(1000);
   
   // stop collecting RSSI samples
@@ -72,7 +73,7 @@ void loop()
 
     data_badge[i+1]=average[i]; //rssis come after the badge id   
 
-    printf("%d ",active_markers[i]);
+    printf("%d ",active_markers[i]); //notice on the console which device is active
   }
   printf("\nnb devices : %d\n",nb_devices);
   for(i=0;i<MAX_DEVICES;i++){
@@ -87,7 +88,7 @@ void loop()
 
 void RFduinoGZLL_onReceive(device_t device, int rssi, char *data, int len)
 {
-  char id = data[0];
+  char id = data[0]; //Collect the id of the device (marker)
     
   // if collecting samples, update the RSSIs for each marker
   if (get_rssi)
@@ -107,7 +108,7 @@ void RFduinoGZLL_onReceive(device_t device, int rssi, char *data, int len)
    }
 
   //id badge
-  data_badge[0]='b';
+  data_badge[0]='b'; //a,b,c, ...
     
 
  RFduinoGZLL.sendToDevice(DEVICE0,data_badge);
