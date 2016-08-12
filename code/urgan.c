@@ -1,4 +1,4 @@
-#include "localisation2.h"
+#include "urgan.h"
 
 #define N 3.5
 #define A_REF 50.0
@@ -16,7 +16,7 @@ void my_delay(int i)    /*Pause l'application pour i seconds*/
 
 void devices_sorted(Marker *dist, int min[], int cpt){
 
-	int i,j;
+	int i;
 	int mini=cpt;
 	Marker aux;
 
@@ -187,8 +187,6 @@ void trilateration(Marker *markers, Coordinates *res1, Coordinates *res2, Coordi
 	
 
 	float a01,b01,a02,b02,a12,b12,a23,b23,a13,b13,a03,b03;
-
-	int i;
 
 	a01 = (markers[0].coor.x - markers[1].coor.x)/(markers[1].coor.y - markers[0].coor.y);
 

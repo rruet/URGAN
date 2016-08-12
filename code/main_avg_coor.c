@@ -1,15 +1,13 @@
 #include <string.h>
 #include <stdlib.h>
-#include "localisation2.h"
+#include "urgan.h"
 
 int main(void){
 	
-	int cpt;
 	char line[SIZE];
 	char *rssis;
 	const char *id;
-	int i,j,k; 
-	float tmp;
+	int i; 
 	int closest[4];
 
 

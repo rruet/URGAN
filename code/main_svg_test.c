@@ -1,16 +1,7 @@
 #include <string.h>
-#include "localisation2.h"
+#include "urgan.h"
 
-#define SIZE 60
-#define NB_CYCLES 10
 #define FILES "/var/www/html/files/test6_0408.txt" 
-
-void my_delay(int i)    /*Pause l'application pour i seconds*/
-{
-    clock_t start,end;
-    start=clock();
-    while(((end=clock())-start)<=i*CLOCKS_PER_SEC);
-}
 
 int main(void){
 	
