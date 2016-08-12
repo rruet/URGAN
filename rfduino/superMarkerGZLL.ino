@@ -34,7 +34,7 @@ void RFduinoGZLL_onReceive(device_t device, int rssi, char *data, int len)
   if (len > 0)
   {
    printf("%c;%d %d %d %d %d %d %d %d\n",data[0],data[1]-256,data[2]-256,data[3]-256,data[4]-256,data[5]-256,data[6]-256,data[7]-256,data[8]-256);
-   digitalWrite(green_led,HIGH);
+   digitalWrite(green_led,HIGH); //flashing the green led each time a message is received
    }
    delay(50);
    digitalWrite(green_led,LOW);
