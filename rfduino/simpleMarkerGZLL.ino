@@ -11,14 +11,14 @@
 
 //DEVICE1..7, whatever, only the id is important
 device_t role = DEVICE1;
-int id =9; //51 to 99
+int id =9; //must be between 0 and MAX_DEVICES defined in the badge code
 
 void setup()
 {
 
   RFduinoGZLL.txPowerLevel = 0;
 
-  // start the GZLL stack
+  // start the GZLL stack as a device (marker)
   RFduinoGZLL.begin(role);
 
   Serial.begin(115200);
@@ -28,6 +28,6 @@ void loop()
 {
   delay(1000);
 
-  // request the state from the Host (send a 0 byte payload)
+  // request the state from the badge all seconds by sending its id
   RFduinoGZLL.sendToHost(id);
 }
