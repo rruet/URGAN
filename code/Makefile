@@ -1,6 +1,6 @@
 export CC = gcc
 export LD = gcc
-export CLIB = ar cq
+export CLIB = -lm
 export CFLAG = -Wall
 
 #
@@ -8,14 +8,14 @@ export CFLAG = -Wall
 #
 
 test: main_svg_test.c urgan.c
-	$(CC) $(CFLAG) main_svg_test.c urgan.c -o urgan_test -lm 
+	$(CC) $(CFLAG) main_svg_test.c urgan.c -o urgan_test $(CLIB) 
 
 #
 # Cible pour l'algo avec moyennage des coordonnées
 #
 
 coor: main_avg_coor.c urgan.c
-	$(CC) $(CFLAG) main_avg_coor.c urgan.c -o urgan_coor -lm
+	$(CC) $(CFLAG) main_avg_coor.c urgan.c -o urgan_coor $(CLIB)
 
 
 #
@@ -23,7 +23,7 @@ coor: main_avg_coor.c urgan.c
 #
 
 dist: main_avg_dist.c urgan.c
-	$(CC) $(CFLAG) main_avg_dist.c urgan.c -o urgan_dist -lm
+	$(CC) $(CFLAG) main_avg_dist.c urgan.c -o urgan_dist $(CLIB)
 
 
 #
